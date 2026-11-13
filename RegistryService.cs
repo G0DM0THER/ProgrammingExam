@@ -15,11 +15,11 @@ namespace RegistryAudit
         // TODO 1: Создать пользовательскую ветку настроек приложения.
         public void CreateBranch()
         {
+            var defaults = SettingsModel.CreateDefault(); 
             using var key = Registry.CurrentUser.CreateSubKey(_subKeyPath);
-            key.SetValue("Theme", "Dark");
-            key.SetValue("FontSize", 16, RegistryValueKind.DWord);
-            key.SetValue("SchemaVersion", 1, RegistryValueKind.DWord);
-            Console.WriteLine("Ветка реестра создана.");
+            key.SetValue("Theme", defaults.Theme);
+            key.SetValue("FontSize", defaults.FontSize, RegistryValueKind.DWord);
+            key.SetValue("SchemaVersion", defaults.SchemaVersion, RegistryValueKind.DWord);
         }
 
         // TODO 2: Считать и вывести все известные значения.

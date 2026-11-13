@@ -11,5 +11,8 @@ namespace RegistryAudit
         public string Theme { get; set; } = "Light";
         public int FontSize { get; set; } = 14;
         public int SchemaVersion { get; set; } = 1;
+
+        // TODO 4: Задать значения по умолчанию.
+        public static SettingsModel CreateDefault() => new SettingsModel();
     }
 }
