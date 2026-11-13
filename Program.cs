@@ -29,11 +29,14 @@ public sealed class ProjectService
     private readonly RegistryService _registryService = new();
     public async Task RunAsync()
     {
-        Console.WriteLine("TODO 1: Создание ветки");
+        // TODO 1: Создать пользовательскую ветку настроек приложения.
+        Console.WriteLine("TODO 1 Создание ветки");
         _registryService.CreateBranch();
         await Task.CompletedTask;
-        // TODO 1: Создать пользовательскую ветку настроек приложения.
+
         // TODO 2: Считать и вывести все известные значения.
+        Console.WriteLine("\nTODO 2 Чтение данных");
+        var (theme, size) = _registryService.ReadSettings();
         // TODO 3: Отличать отсутствие ключа от отсутствия отдельного значения.
         // TODO 4: Задать значения по умолчанию.
         // TODO 5: Добавить версию схемы и проверку совместимости.
