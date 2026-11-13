@@ -38,6 +38,11 @@ public sealed class ProjectService
         Console.WriteLine("\nTODO 2 Чтение данных");
         var (theme, size) = _registryService.ReadSettings();
         // TODO 3: Отличать отсутствие ключа от отсутствия отдельного значения.
+        Console.WriteLine("\nTODO 3 Проверка наличия ветки");
+        if (!_registryService.DoesBranchExist())
+            Console.WriteLine("Ветки нет!");
+        else
+            Console.WriteLine("Ветка существует.");
         // TODO 4: Задать значения по умолчанию.
         // TODO 5: Добавить версию схемы и проверку совместимости.
         // TODO 6: Реализовать сброс только своей ветки.

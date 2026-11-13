@@ -34,5 +34,12 @@ namespace RegistryAudit
             Console.WriteLine($"Прочитано: Theme={theme}, FontSize={fontSize}");
             return (theme, fontSize);
         }
+
+        // TODO 3: Отличать отсутствие ключа от отсутствия отдельного значения.
+        public bool DoesBranchExist()
+        {
+            using var key = Registry.CurrentUser.OpenSubKey(_subKeyPath);
+            return key != null;
+        }
     }
 }
