@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace RegistryAudit
@@ -47,6 +48,15 @@ namespace RegistryAudit
         {
             Registry.CurrentUser.DeleteSubKeyTree(_subKeyPath, throwOnMissingSubKey: false);
             Console.WriteLine("Ветка удалена.");
+        }
+
+        // TODO 8: Добавить резервное копирование настроек в JSON.
+        public void BackupToJson(string theme, int fontSize)
+        {
+            var model = new SettingsModel { Theme = theme, FontSize = fontSize };
+            string json = JsonSerializer.Serialize(model);
+            File.WriteAllText("backup.json", json);
+            Console.WriteLine("Бэкап сохранен в backup.json");
         }
     }
 }

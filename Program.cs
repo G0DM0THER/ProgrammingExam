@@ -57,6 +57,8 @@ public sealed class ProjectService
             // TODO 7: Обрабатывать ошибки доступа и неверные типы значений.
 
             // TODO 8: Добавить резервное копирование настроек в JSON.
+            Console.WriteLine("\nTODO 8 Бэкап в JSON");
+            _registryService.BackupToJson(theme, size);
             // TODO 9: Добавить LastRunUtc.
             // TODO 10: Реализовать миграцию старой схемы.
 
