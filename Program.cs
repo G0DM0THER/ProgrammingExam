@@ -47,8 +47,11 @@ public sealed class ProjectService
         // TODO 4: Задать значения по умолчанию.
         // TODO 5: Добавить версию схемы и проверку совместимости.
         Console.WriteLine("\nTODO 5 Проверка версии схемы");
-        _migrationService.CheckCompatibility(1); 
+        _migrationService.CheckCompatibility(1);
         // TODO 6: Реализовать сброс только своей ветки.
+        Console.WriteLine("\nTODO 6 Сброс ветки");
+        _registryService.ResetBranch();
+        Console.WriteLine($"Проверка: {(_registryService.DoesBranchExist() ? "Ветка осталась" : "Ветки нет")}");
         // TODO 7: Обрабатывать ошибки доступа и неверные типы значений.
 
         // TODO 8: Добавить резервное копирование настроек в JSON.

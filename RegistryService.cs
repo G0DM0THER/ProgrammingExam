@@ -41,5 +41,12 @@ namespace RegistryAudit
             using var key = Registry.CurrentUser.OpenSubKey(_subKeyPath);
             return key != null;
         }
+
+        // TODO 6: Реализовать сброс только своей ветки.
+        public void ResetBranch()
+        {
+            Registry.CurrentUser.DeleteSubKeyTree(_subKeyPath, throwOnMissingSubKey: false);
+            Console.WriteLine("Ветка удалена.");
+        }
     }
 }
