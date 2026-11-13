@@ -21,5 +21,15 @@ namespace RegistryAudit
                 Console.WriteLine($"ошибка: Версия в реестре ({versionInRegistry}) новее программы!");
         }
 
+        // TODO 10: Реализовать миграцию старой схемы.
+        public void Migrate(int oldVersion)
+        {
+            if (oldVersion == 1)
+            {
+                Console.WriteLine("Миграция с v1 на v2 обновляем структуру");
+                
+            }
+        }
+
     }
 }

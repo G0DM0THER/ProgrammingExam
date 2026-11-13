@@ -58,5 +58,11 @@ namespace RegistryAudit
             File.WriteAllText("backup.json", json);
             Console.WriteLine("Бэкап сохранен в backup.json");
         }
+        //TODO 10
+        public int GetSchemaVersion()
+        {
+            using var key = Registry.CurrentUser.OpenSubKey(_subKeyPath);
+            return (int)(key?.GetValue("SchemaVersion") ?? 1);
+        }
     }
 }

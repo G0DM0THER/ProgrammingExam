@@ -49,7 +49,8 @@ public sealed class ProjectService
             // TODO 4: Задать значения по умолчанию.
             // TODO 5: Добавить версию схемы и проверку совместимости.
             Console.WriteLine("\nTODO 5 Проверка версии схемы");
-            _migrationService.CheckCompatibility(1);
+            int currentVersion = _registryService.GetSchemaVersion();
+            _migrationService.CheckCompatibility(currentVersion);
             // TODO 6: Реализовать сброс только своей ветки.
             Console.WriteLine("\nTODO 6 Сброс ветки");
             _registryService.ResetBranch();
