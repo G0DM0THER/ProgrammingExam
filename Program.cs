@@ -60,6 +60,8 @@ public sealed class ProjectService
             Console.WriteLine("\nTODO 8 Бэкап в JSON");
             _registryService.BackupToJson(theme, size);
             // TODO 9: Добавить LastRunUtc.
+            Console.WriteLine("\nTODO 9 LastRunUtc");
+            Console.WriteLine($"Время запуска: {DateTime.UtcNow}");
             // TODO 10: Реализовать миграцию старой схемы.
 
             Console.WriteLine("Стартовый проект собран. Реализуйте задания варианта.");

@@ -14,5 +14,7 @@ namespace RegistryAudit
 
         // TODO 4: Задать значения по умолчанию.
         public static SettingsModel CreateDefault() => new SettingsModel();
+        //TODO 9
+        public DateTime LastRunUtc { get; set; } = DateTime.UtcNow;
     }
 }
