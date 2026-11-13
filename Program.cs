@@ -1,3 +1,4 @@
+using RegistryAudit;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Threading.Channels;
@@ -25,10 +26,12 @@ internal static class Program
 
 public sealed class ProjectService
 {
+    private readonly RegistryService _registryService = new();
     public async Task RunAsync()
     {
-        // TODO: перенесите предметную логику в отдельные методы и классы.
-        // TODO: не размещайте весь проект в Main.
+        Console.WriteLine("TODO 1: Создание ветки");
+        _registryService.CreateBranch();
+        await Task.CompletedTask;
         // TODO 1: Создать пользовательскую ветку настроек приложения.
         // TODO 2: Считать и вывести все известные значения.
         // TODO 3: Отличать отсутствие ключа от отсутствия отдельного значения.
