@@ -27,6 +27,7 @@ internal static class Program
 public sealed class ProjectService
 {
     private readonly RegistryService _registryService = new();
+    private readonly MigrationService _migrationService = new();
     public async Task RunAsync()
     {
         // TODO 1: Создать пользовательскую ветку настроек приложения.
@@ -45,6 +46,8 @@ public sealed class ProjectService
             Console.WriteLine("Ветка существует.");
         // TODO 4: Задать значения по умолчанию.
         // TODO 5: Добавить версию схемы и проверку совместимости.
+        Console.WriteLine("\nTODO 5 Проверка версии схемы");
+        _migrationService.CheckCompatibility(1); 
         // TODO 6: Реализовать сброс только своей ветки.
         // TODO 7: Обрабатывать ошибки доступа и неверные типы значений.
 
